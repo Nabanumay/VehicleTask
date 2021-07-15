@@ -41,7 +41,7 @@ namespace Car
             {
                 case 1:
                     Console.WriteLine("Press F for forward, B for backward, L for left, R for right.");
-                    Console.WriteLine(this.Move((char)Console.Read()));
+                    Console.WriteLine(this.Move(Convert.ToChar(Console.ReadLine())));
                     return true;
 
                 case 2:

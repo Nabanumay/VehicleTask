@@ -1,11 +1,16 @@
 ﻿using Car;
 using Motorbike;
 using System;
+using System.Collections.Generic;
 
 namespace VehicleTask
 {
     class Program
     {
+
+        static string[] colors = { "red", "blue",
+                        "black", "yellow" };
+        static List<string> colorsRange = new List<string>(colors);
 
         public static bool Validation(string input, int range, int level)
         {
@@ -47,9 +52,23 @@ namespace VehicleTask
 
         }
         
-        
+        /*public static string PickColor()
+        {
+            Console.WriteLine("Please choose a color");
+            string color = Console.ReadLine();
+            color.ToLower();
+            foreach(var colors in colorsRange)
+            {
+                if (colors.Equals(colors))
+                    return color;
+
+            }
+            Console.WriteLine("Color is not part of the list, please try again.");
+            PickColor()
+        }*/
         static void Main(string[] args)
         {
+            bool colorFound = true;
             Tire tire = new Tire("Pirelli", 22.5, 3.2, 45.3); 
             Console.WriteLine("Choose your vehicle: \n Press 1 for car, 2 for motorcycle");
             string input = Console.ReadLine();
@@ -74,7 +93,6 @@ namespace VehicleTask
                     switch (carChoice)
                     {
                         case (int)CarType.Sedan:
-                            Console.WriteLine("Please choose a color");
                             color = Console.ReadLine();
                             Sedan sedan = new Sedan(color, 4, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(sedan);
@@ -91,6 +109,10 @@ namespace VehicleTask
                             color = Console.ReadLine();
                             SUV suv = new SUV(color, 4, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(suv);
+                            while (suv.Actions())
+                            {
+
+                            }
                             break;
 
                         case (int)CarType.Truck:
@@ -98,6 +120,10 @@ namespace VehicleTask
                             color = Console.ReadLine();
                             Truck truck = new Truck(color, 6, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(truck);
+                            while (truck.Actions())
+                            {
+
+                            }
                             break;
                     }
                     break;
@@ -117,6 +143,10 @@ namespace VehicleTask
                             color = Console.ReadLine();
                             Motorcycle motorcycle = new Motorcycle(color, 2, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(motorcycle);
+                            while (motorcycle.Actions())
+                            {
+
+                            }
                             break;
 
                         case (int)MotorcycleType.Tricycle:
@@ -124,6 +154,10 @@ namespace VehicleTask
                             color = Console.ReadLine();
                             Tricycle tricycle = new Tricycle(color, 3, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(tricycle);
+                            while (tricycle.Actions())
+                            {
+
+                            }
                             break;
 
                     }
