@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VehicleTask.Car;
 
 namespace VehicleTask.Vehicle
 {
+    
     public class Vehicle : IMovement
     {
         public string type
@@ -90,17 +93,17 @@ namespace VehicleTask.Vehicle
 
             else if (upper == 'B')
             {
-                return "You have moved Backwards.";
+                return "You have moved backwards.";
             }
 
             else if (upper == 'R')
             {
-                return "You have moved forward.";
+                return "You have moved right.";
             }
 
-            else if (upper == 'F')
+            else if (upper == 'L')
             {
-                return "You have moved forward.";
+                return "You have moved left.";
             }
 
             else
