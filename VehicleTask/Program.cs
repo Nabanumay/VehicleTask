@@ -44,6 +44,7 @@ namespace VehicleTask
         public static void WriteInfo(Vehicle.Vehicle c)
         {
             Console.WriteLine(c.ToString());
+            Console.WriteLine(c.t.ToString());
             Console.WriteLine(c.Move('F'));
             Console.WriteLine(c.Move('B'));
             Console.WriteLine(c.Move('L'));
@@ -85,7 +86,6 @@ namespace VehicleTask
                         case (int)CarType.Sedan:
                             Sedan sedan = new Sedan(PickColor(), 4, 323, 520, 255, 2000, 150, 300, 100, t);
                             WriteInfo(sedan);
-                            Console.WriteLine(t.ToString());
                             Console.WriteLine(sedan.pressSunroofButton()+"\n"+sedan.pressSunroofButton());
                             break;
 
@@ -93,14 +93,12 @@ namespace VehicleTask
                         case (int)CarType.SUV:
                             SUV suv = new SUV(PickColor(), 4, 323, 520, 255, 2000, 150, 300, 100, t);
                             WriteInfo(suv);
-                            Console.WriteLine(t.ToString());
                             Console.WriteLine(suv.pressSunroofButton() + "\n" + suv.pressSunroofButton());
                             break;
 
                         case (int)CarType.Truck:
                             Truck truck = new Truck(PickColor(), 6, 323, 520, 255, 2000, 150, 300, 100, t);
                             WriteInfo(truck);
-                            Console.WriteLine(t.ToString());
                             break;
                     }
                     break;
@@ -118,13 +116,11 @@ namespace VehicleTask
                         case (int)MotorcycleType.Motorcycle:
                             Motorcycle motorcycle = new Motorcycle(PickColor(), 2, 323, 520, 255, 2000, 150, 300, 100, t);
                             WriteInfo(motorcycle);
-                            Console.WriteLine(t.ToString());
                             break;
 
                         case (int)MotorcycleType.Tricycle:
                             Tricycle tricycle = new Tricycle(PickColor(), 3, 323, 520, 255, 2000, 150, 300, 100, t);
                             WriteInfo(tricycle);
-                            Console.WriteLine(t.ToString());
                             break;
 
                     }

@@ -42,7 +42,5 @@ namespace VehicleTask
         {
             return "Tire type: " + tireType + "\nTire size: " + tireSize + "inches\nTire pressure: " + tirePressure + "bar\nTire temperature: " + tireTemperature+"C";
         }
-
-
     }
 }

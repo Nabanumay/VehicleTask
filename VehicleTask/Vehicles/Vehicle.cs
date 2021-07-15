@@ -1,16 +1,11 @@
 ﻿using Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VehicleTask.Car;
 
 namespace VehicleTask.Vehicle
 {
     
     public class Vehicle : IMovement
     {
+        public Tire t;
         public string type
         {
             get;
@@ -74,6 +69,7 @@ namespace VehicleTask.Vehicle
             this.height = height;
             this.length = length;
             this.width = width;
+            this.t = t;
             
         }
 
