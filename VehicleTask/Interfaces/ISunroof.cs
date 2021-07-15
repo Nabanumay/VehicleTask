@@ -8,6 +8,6 @@ namespace VehicleTask.Car
 {
     public interface ISunroof
     {
-        string pressSunroofButton();
+        string PressSunroofButton();
     }
 }

@@ -3,9 +3,10 @@
 namespace VehicleTask.Vehicle
 {
     
-    public class Vehicle : IMovement
+    public  class Vehicle : IMovement
     {
-        public Tire t;
+        public Tire tire;
+
         public string type
         {
             get;
@@ -56,6 +57,7 @@ namespace VehicleTask.Vehicle
             get;
             set;
         }
+        public bool HasSunroof { get; set; } = false;
 
         public Vehicle(string color, int noOfWheels, int power, int gasMileage,
             int torque, double weight, double height, double length, double width, Tire t)
@@ -69,7 +71,7 @@ namespace VehicleTask.Vehicle
             this.height = height;
             this.length = length;
             this.width = width;
-            this.t = t;
+            this.tire = t;
             
         }
 
@@ -79,36 +81,31 @@ namespace VehicleTask.Vehicle
                 "Nm\nGas mileage: " + gasMileage + "km\nWeight: " + weight + "kg\nHeight " + height + "cm\nLength: " + length + "cm\nWidth: " + width+"cm";
         }
 
+   
+
         public string Move(char direction)
         {
             char upper = char.ToUpper(direction);
             if (upper == 'F')
-            {
                 return "You have moved forward.";
-            }
+            
 
             else if (upper == 'B')
-            {
                 return "You have moved backwards.";
-            }
+            
 
             else if (upper == 'R')
-            {
                 return "You have moved right.";
-            }
+            
 
             else if (upper == 'L')
-            {
                 return "You have moved left.";
-            }
+            
 
             else
-            {
                 return "Incorrect entry, try again.";
-            }
-        }
-
-       
+            
+        }  
     }
 }
 
