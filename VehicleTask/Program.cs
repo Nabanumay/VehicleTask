@@ -12,6 +12,23 @@ namespace VehicleTask
                         "black", "yellow" };
         static List<string> colorsRange = new List<string>(colors);
 
+        public static string ColorValidation()
+        {    bool found = false;
+            string color;
+            Console.WriteLine("Please choose from the following colors: \nRed\nBlue\nBlack\nYellow");
+            color = Console.ReadLine();
+            while (!found)
+            {
+                if (colorsRange.Contains(color.ToLower())){
+                    found = true;
+                }
+                else {
+                    Console.WriteLine("Invalid entry please choose from the list.");
+                    color = Console.ReadLine(); 
+                }
+            }
+            return color;
+        }
         public static bool Validation(string input, int range, int level)
         {
             int choice;
@@ -68,11 +85,9 @@ namespace VehicleTask
         }*/
         static void Main(string[] args)
         {
-            bool colorFound = true;
             Tire tire = new Tire("Pirelli", 22.5, 3.2, 45.3); 
             Console.WriteLine("Choose your vehicle: \n Press 1 for car, 2 for motorcycle");
             string input = Console.ReadLine();
-            string color;
             int vehicleChoice, carChoice, bikeChoice;
              while (!Validation(input, 2, 1))
             { 
@@ -93,8 +108,7 @@ namespace VehicleTask
                     switch (carChoice)
                     {
                         case (int)CarType.Sedan:
-                            color = Console.ReadLine();
-                            Sedan sedan = new Sedan(color, 4, 323, 520, 255, 2000, 150, 300, 100, tire);
+                            Sedan sedan = new Sedan(ColorValidation(), 4, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(sedan);
                             while (sedan.Actions())
                             {
@@ -105,9 +119,8 @@ namespace VehicleTask
 
 
                         case (int)CarType.SUV:
-                            Console.WriteLine("Please choose a color");
-                            color = Console.ReadLine();
-                            SUV suv = new SUV(color, 4, 323, 520, 255, 2000, 150, 300, 100, tire);
+                            
+                            SUV suv = new SUV(ColorValidation(), 4, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(suv);
                             while (suv.Actions())
                             {
@@ -116,9 +129,7 @@ namespace VehicleTask
                             break;
 
                         case (int)CarType.Truck:
-                            Console.WriteLine("Please choose a color");
-                            color = Console.ReadLine();
-                            Truck truck = new Truck(color, 6, 323, 520, 255, 2000, 150, 300, 100, tire);
+                            Truck truck = new Truck(ColorValidation(), 6, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(truck);
                             while (truck.Actions())
                             {
@@ -139,9 +150,7 @@ namespace VehicleTask
                     switch (bikeChoice)
                     {
                         case (int)MotorcycleType.Motorcycle:
-                            Console.WriteLine("Please choose a color");
-                            color = Console.ReadLine();
-                            Motorcycle motorcycle = new Motorcycle(color, 2, 323, 520, 255, 2000, 150, 300, 100, tire);
+                            Motorcycle motorcycle = new Motorcycle(ColorValidation(), 2, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(motorcycle);
                             while (motorcycle.Actions())
                             {
@@ -150,9 +159,7 @@ namespace VehicleTask
                             break;
 
                         case (int)MotorcycleType.Tricycle:
-                            Console.WriteLine("Please choose a color");
-                            color = Console.ReadLine();
-                            Tricycle tricycle = new Tricycle(color, 3, 323, 520, 255, 2000, 150, 300, 100, tire);
+                            Tricycle tricycle = new Tricycle(ColorValidation(), 3, 323, 520, 255, 2000, 150, 300, 100, tire);
                             WriteInfo(tricycle);
                             while (tricycle.Actions())
                             {

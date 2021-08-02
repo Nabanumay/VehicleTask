@@ -16,7 +16,7 @@ namespace Motorbike
         {
             int choice;
             string input;
-            Console.WriteLine("What would you like to do with your sedan?");
+            Console.WriteLine("What would you like to do with your tricycle?");
             Console.WriteLine("Press 1 to move");
             Console.WriteLine("Press 0 to exit");
             input = Console.ReadLine();

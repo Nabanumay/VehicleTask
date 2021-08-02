@@ -22,7 +22,7 @@ namespace Car
         {
             int choice;
             string input;
-            Console.WriteLine("What would you like to do with your sedan?");
+            Console.WriteLine("What would you like to do with your SUV?");
             Console.WriteLine("Press 1 to move");
             Console.WriteLine("Press 2 to press the sunroof button.");
             Console.WriteLine("Press 0 to exit");
